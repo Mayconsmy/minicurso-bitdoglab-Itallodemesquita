@@ -47,6 +47,7 @@ int main() {
     /* Exibindo mensagem no display */
 
     char *texto[] = {
+        " ",
         "  Hello World!  "};
 
     int y = 0;
