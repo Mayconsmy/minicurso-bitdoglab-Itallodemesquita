@@ -78,8 +78,8 @@ void typeText(uint8_t *ssd, struct render_area frame_area, char *text[], int cou
 
 int main() {
 
-  const uint botao_A = 5;
-  const uint botao_B = 6;
+  const uint botao_A = 4;
+  const uint botao_B = 5;
   const uint led_vermelho = 13;
   const uint led_verde = 11;
   const uint led_azul = 12;
