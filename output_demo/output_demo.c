@@ -9,8 +9,8 @@
 #include "hardware/i2c.h"
 #include "display/ssd1306.h"
 
-const uint I2C_SDA = 14;
-const uint I2C_SCL = 15;
+const uint I2C_SDA = 14; /* Declarando barramento SDA */
+const uint I2C_SCL = 15; /* Declarando barramento SCL */
 
 void initLed(uint pin) {
   gpio_init(pin);
@@ -39,30 +39,41 @@ void initDisplay(uint8_t *ssd, struct render_area *frame_area) {
 
   ssd1306_init();
 
-  
-  *frame_area = (struct render_area) /* Define área do display que será desenhada */ {
+  /* Define área do display que será desenhada */
+  *frame_area = (struct render_area) {
     .start_column = 0,
     .end_column = ssd1306_width - 1, // 128 de largura
     .start_page = 0,
     .end_page = ssd1306_n_pages - 1 // 64 / 8
   }; 
 
+  /* Calcula tamanho do buffer a partir da área de renderização */
   calculate_render_area_buffer_length(frame_area);
 
+  /* Limpa o buffer */
   memset(ssd, 0, ssd1306_buffer_length);
+
+  /* Renderiza a informação presente no buffer */
   render_on_display(ssd, frame_area);
 }
+
 /* Função que escreve texto no display */
 void typeText(uint8_t *ssd, struct render_area frame_area, char *text[], int count_of) { 
   memset(ssd, 0, ssd1306_buffer_length); /* Zera o conteúdo do buffer */
+  
+  /* Declarando linha */
   int y = 0;
 
-  for (uint i = 0; i < count_of; i++) { /* Percorre cada letra da string*/
-    ssd1306_draw_string(ssd, 0, y, text[i]); /* Desenha a letra no buffer */
-    y += 8; /* Dá espaço (cada letra ocupa 8 pixels) */
+  /* Percorre cada linha do vetor */
+  for (uint i = 0; i < count_of; i++) { 
+
+    /* Desenha a string, letra por letra */
+    ssd1306_draw_string(ssd, 0, y, text[i]); 
+    y += 8; /* Pula uma linha */
   }
 
-  render_on_display(ssd, &frame_area); /* Envia o desenho pro display */
+  /* Renderiza o texto no display */
+  render_on_display(ssd, &frame_area); 
 }
 
 int main() {
@@ -90,9 +101,7 @@ int main() {
     typeText(ssd, frame_area, message, count_of(message));
     putLed(led_vermelho, led_verde, led_azul, 0, 1, 0);
     sleep_ms(10000);
-
   }
 
     return 0;
-
 }
