@@ -1,6 +1,6 @@
 # Introdução ao desenvolvimento embarcado com BitDogLab
 
-Este será o repositório oficial do minicurso. Nele, você encontrará códigos e demonstrações básicas de código em linguagem C para manipulação de componentes da placa BitDogLab.
+Repositório oficial do minicurso de "Introdução ao desenvolvimento embarcado com BitDogLab", ministrado por mim. Aqui, você encontrará aplicações e demonstrações básicas de código em linguagem C para manipulação de componentes da placa BitDogLab e do microcontrolador da Raspberry, feitas com base em Pico SDK.
 
 ### Introdução
 A BitDogLab é um projeto de hardware aberto da Universidade de Campinas (UNICAMP), focado no ensino de eletrônica e de sistemas embarcados. Sua arquitetura é composta pelo microcontrolador Raspberry Pi Pico W, conectividade Bluetooth e Wi-Fi e compatibilidade com diversos protocolos de comunicação serial (UART, i2c, PWM, ADC) e sua organização é composta por diversos periféricos soldados em placa, como botões, joystick, buzzers, microfone, matriz de LEDs, sensor de temperatura, entre outros.
@@ -45,5 +45,4 @@ O minicurso terá duração de 4 horas, divididas em:
 | `ssd1306_init();`| Inicializa o display OLED SSD1306 |
 | `render_on_display(buffer, area);`| Renderiza o conteúdo do buffer na área de exibição definida |
 | `ssd1306_draw_string(buffer, x, y, text);`| Escreve texto no buffer em coordenadas x, y |
-| `calculate_render_area_buffer_length();`| Calcula o tamanho do buffer com base na área de renderização
- |
+| `calculate_render_area_buffer_length();`| Calcula o tamanho do buffer com base na área de renderização |
