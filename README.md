@@ -20,6 +20,22 @@ O minicurso terá duração de 4 horas, divididas em:
 - Desafio final
 
 ## Cheat sheet (Raspberry Pi Pico W)
+
+### Pinos e conexões
+#### LED RGB (cátodo comum)
+- 🔴 Vermelho: GPIO13
+- 🟢 Verde: GPIO11
+- 🔵 Azul: GPIO12
+
+#### Botões
+- 🔘 Botão A: GPIO5
+- 🔘 Botão B: GPIO6
+
+#### Display OLED
+- SDA: GPIO2
+- SCL: GPIO3
+
+
 ### Controle de pinos GPIO
 | Função | Descrição |
 | ----------------| ----- |
@@ -35,7 +51,7 @@ O minicurso terá duração de 4 horas, divididas em:
 ### Temporização
 | Função | Descrição |
 | ----------------| ----- |
-| `sleep_ms(uint32_t ms);`| Delay em milissegundos |
+| `sleep_ms(uint32_t ms);`| Delay em milissegundos  |
 | `sleep_us(uint32_t us);`| Delay em microssegundos |
 
 ### Comunicação I2C
