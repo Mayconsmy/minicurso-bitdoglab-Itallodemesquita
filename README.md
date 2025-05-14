@@ -1,5 +1,6 @@
 # Introdução ao desenvolvimento embarcado com BitDogLab
-
+- Fork do repositorio sobreo o minicurso de embarcados ministrado por Itallo Mesquita.
+  
 Repositório oficial do minicurso de "Introdução ao desenvolvimento embarcado com BitDogLab", ministrado por mim. Aqui, você encontrará aplicações e demonstrações básicas de código em linguagem C para manipulação de componentes da placa BitDogLab e do microcontrolador da Raspberry, feitas com base em Pico SDK.
 
 ### Introdução
